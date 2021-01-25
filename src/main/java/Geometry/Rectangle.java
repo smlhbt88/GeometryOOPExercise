@@ -41,4 +41,15 @@ public class Rectangle extends Shape{
     public void setLength(int value) {
         this.length = value;
     }
+
+    public String displayRectangle() {
+        try {
+                return this.length + " X " + this.width
+                        + " rectangle at (" + super.getShapeCenter().getXCoordinate() + " , " + super.getShapeCenter().getYCoordinate() + ")";
+        } catch (NoCenterPointFound noCenterPointFound) {
+            return this.length + " X " + this.width
+                    + " rectangle";
+        }
+    }
+
 }

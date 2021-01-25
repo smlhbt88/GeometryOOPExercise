@@ -30,4 +30,12 @@ public class Circle extends Shape {
     public void setRadius(double value) {
         this.radius = value;
     }
+
+    public String displayCircle() {
+        try {
+            return "circle of radius " + this.radius + " at ("+ super.getShapeCenter().getXCoordinate() + " , " + super.getShapeCenter().getYCoordinate() + ")";
+        } catch (NoCenterPointFound noCenterPointFound) {
+            return "circle of radius " + this.radius;
+        }
+    }
 }

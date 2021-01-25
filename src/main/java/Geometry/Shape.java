@@ -1,7 +1,5 @@
 package Geometry;
 
-import java.awt.geom.NoninvertibleTransformException;
-
 public abstract class Shape {
 
     private String color;

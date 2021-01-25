@@ -26,4 +26,10 @@ public class Point {
         this.x+=x;
         this.y+=y;
     }
+
+    public double calculateDistance(Point shapeCenter, Point shapeCenter1) {
+        double x = Math.pow(shapeCenter1.getXCoordinate()-shapeCenter.getXCoordinate(),2);
+        double y = Math.pow(shapeCenter1.getYCoordinate()-shapeCenter.getYCoordinate(),2);
+        return Math.sqrt(x+y);
+    }
 }
