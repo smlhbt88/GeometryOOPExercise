@@ -49,5 +49,19 @@ public class ShapeTest {
 
     }
 
+    @Test
+    public void displayAllShapes() {
+        shape = new Circle(5.00);
+        Shape shape1 = new Rectangle(4, 5);
+        Shape shape2 = new Circle(9.0);
+        Shape shape3 = new Rectangle(5.0,7.0);
+        shape.addShape(shape);
+        shape.addShape(shape1);
+        shape.addShape(shape2);
+        shape.addShape(shape3);
+        String expectedResult = shape.display()+"\n"+shape1.display()+"\n"+shape2.display()+"\n"+shape3.display();
+        assertEquals(expectedResult,shape.allShapesDisplay());
+    }
+
 
 }

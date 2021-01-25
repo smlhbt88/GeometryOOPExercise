@@ -2,8 +2,8 @@ package Geometry;
 
 public class Rectangle extends Shape{
 
-    private int length;
-    private int width;
+    private double length;
+    private double width;
 
     Rectangle(){
         this.width = 1;
@@ -20,17 +20,17 @@ public class Rectangle extends Shape{
         return (this.width * this.length);
     }
 
-    public Rectangle(int width, int length) {
+    public Rectangle(double width, double length) {
         this.width = width;
         this.length = length;
     }
 
 
-    public int getWidth() {
+    public double getWidth() {
         return  this.width;
     }
 
-    public int getLength() {
+    public double getLength() {
         return this.length;
     }
 
@@ -42,7 +42,7 @@ public class Rectangle extends Shape{
         this.length = value;
     }
 
-    public String displayRectangle() {
+    public String display() {
         try {
                 return this.length + " X " + this.width
                         + " rectangle at (" + super.getShapeCenter().getXCoordinate() + " , " + super.getShapeCenter().getYCoordinate() + ")";

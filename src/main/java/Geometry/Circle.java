@@ -31,7 +31,7 @@ public class Circle extends Shape {
         this.radius = value;
     }
 
-    public String displayCircle() {
+    public String display() {
         try {
             return "circle of radius " + this.radius + " at ("+ super.getShapeCenter().getXCoordinate() + " , " + super.getShapeCenter().getYCoordinate() + ")";
         } catch (NoCenterPointFound noCenterPointFound) {

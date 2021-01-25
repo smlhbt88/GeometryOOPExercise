@@ -28,8 +28,19 @@ public class Point {
     }
 
     public double calculateDistance(Point shapeCenter, Point shapeCenter1) {
-        double x = Math.pow(shapeCenter1.getXCoordinate()-shapeCenter.getXCoordinate(),2);
-        double y = Math.pow(shapeCenter1.getYCoordinate()-shapeCenter.getYCoordinate(),2);
+        double x = Math.pow(Math.abs(shapeCenter1.getXCoordinate()-shapeCenter.getXCoordinate()),2);
+        double y = Math.pow(Math.abs(shapeCenter1.getYCoordinate()-shapeCenter.getYCoordinate()),2);
         return Math.sqrt(x+y);
+    }
+
+    @Override
+    public String toString() {
+        return "("+this.getXCoordinate()+","+this.getYCoordinate()+")";
+    }
+
+    public String segmentDisplay(Point point1) {
+        //[(x,y)--(x,y)]
+        return "[("+this.getXCoordinate()+","+this.getYCoordinate()
+                +"--("+point1.getXCoordinate()+","+point1.getYCoordinate()+")]";
     }
 }

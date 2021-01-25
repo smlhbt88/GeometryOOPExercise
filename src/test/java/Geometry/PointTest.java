@@ -98,12 +98,12 @@ public class PointTest {
         Rectangle rectangle = new Rectangle(4,6);
         point = new Point(3,4);
         rectangle.setShapeCenter(point);
-        String actualResult = rectangle.displayRectangle();
+        String actualResult = rectangle.display();
         assertEquals( rectangle.getLength()+" X "+ rectangle.getWidth()
                 +" rectangle at (" +point.getXCoordinate()+" , "+point.getYCoordinate()+ ")",actualResult);
 
         Rectangle rectangle1 = new Rectangle(7,7);
-        actualResult = rectangle1.displayRectangle();
+        actualResult = rectangle1.display();
         assertEquals( rectangle1.getLength()+" X "+ rectangle1.getWidth()
                 +" rectangle",actualResult);
     }
@@ -113,13 +113,28 @@ public class PointTest {
         Circle circle = new Circle(4);
         point = new Point(3,4);
         circle.setShapeCenter(point);
-        String actualResult = circle.displayCircle();
+        String actualResult = circle.display();
         assertEquals("circle of radius " + circle.getRadius() + " at ("+ point.getXCoordinate() + " , " + point.getYCoordinate() + ")",actualResult);
 
         Circle circle1 = new Circle(7);
-        actualResult = circle1.displayCircle();
+        actualResult = circle1.display();
         assertEquals( "circle of radius " + circle1.getRadius(),actualResult);
     }
 
+    @Test
+    public void displayPoint() {
+        point = new Point(3,4);
+        String expectedResult = "("+point.getXCoordinate()+","+point.getYCoordinate()+")";
+        assertEquals(expectedResult,point.toString());
+    }
+
+    @Test
+    public void segmentTestDisplay() {
+        point = new Point(3,4);
+        Point point1 = new Point(4,5);
+        String expectedResult = "[("+point.getXCoordinate()+","+point.getYCoordinate()
+                +"--("+point1.getXCoordinate()+","+point1.getYCoordinate()+")]";
+        assertEquals(expectedResult,point.segmentDisplay(point1));
+    }
 
 }
