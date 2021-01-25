@@ -3,6 +3,8 @@ package Geometry;
 import org.junit.Before;
 import org.junit.Test;
 
+import javax.swing.tree.ExpandVetoException;
+
 import static org.junit.Assert.assertEquals;
 
 public class PointTest {
@@ -24,7 +26,7 @@ public class PointTest {
     }
 
     @Test
-    public void setTheCenterOfAShape() {
+    public void setTheCenterOfAShape() throws NoCenterPointFound {
         shape = new Circle();
         point = new Point(2, 3);
 
@@ -36,7 +38,7 @@ public class PointTest {
     }
 
     @Test
-    public void retrieveShapePointCenter() {
+    public void retrieveShapePointCenter() throws NoCenterPointFound {
         shape = new Circle();
         point = new Point(3,4);
 
@@ -44,5 +46,23 @@ public class PointTest {
         Point actualPoint = shape.getShapeCenter();
 
         assertEquals(point, actualPoint);
+    }
+
+    @Test(expected = NoCenterPointFound.class)
+    public void testShapeThatCenterNotSet() throws NoCenterPointFound {
+
+        shape = new Circle();
+        shape.getShapeCenter();
+
+    }
+
+    @Test
+    public void testMovePoint() {
+        point = new Point(4,5);
+
+        point.movePoint(3,3);
+
+        assertEquals(7,point.getXCoordinate(),0.1);
+        assertEquals(8, point.getYCoordinate(),0.1);
     }
 }

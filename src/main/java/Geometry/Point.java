@@ -21,4 +21,9 @@ public class Point {
     public double getYCoordinate() {
         return y;
     }
+
+    public void movePoint(double x, double y) {
+        this.x+=x;
+        this.y+=y;
+    }
 }

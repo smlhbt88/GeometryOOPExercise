@@ -1,5 +1,7 @@
 package Geometry;
 
+import java.awt.geom.NoninvertibleTransformException;
+
 public abstract class Shape {
 
     private String color;
@@ -25,7 +27,10 @@ public abstract class Shape {
         this.centerPoint = point;
     }
 
-    public Point getShapeCenter() {
+    public Point getShapeCenter() throws NoCenterPointFound {
+        if(centerPoint == null) {
+            throw new NoCenterPointFound("No shape found");
+        }
         return centerPoint;
     }
 }
