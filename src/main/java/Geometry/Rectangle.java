@@ -1,4 +1,4 @@
-package com.geometry.Rectangle;
+package Geometry;
 
 public class Rectangle {
 
@@ -22,5 +22,13 @@ public class Rectangle {
 
     public int getLength() {
         return this.length;
+    }
+
+    public void setWidth(int value) {
+        this.width = value;
+    }
+
+    public void setLength(int value) {
+        this.length = value;
     }
 }

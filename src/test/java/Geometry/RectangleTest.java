@@ -1,4 +1,4 @@
-package com.geometry.Rectangle;
+package Geometry;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -27,4 +27,13 @@ public class RectangleTest {
         assertEquals(1 , rectangle.getLength());
     }
 
+    @Test
+    public void modifyingWidthAndLengthOfTheRectangleChangesTheirValues(){
+        rectangle = new Rectangle(3,5);
+        rectangle.setWidth(8);
+        rectangle.setLength(10);
+
+        assertEquals(8 , rectangle.getWidth());
+        assertEquals(10 , rectangle.getLength());
+    }
 }
