@@ -26,5 +26,14 @@ public class CircleTest {
         assertEquals(1 , circle.getRadius(),0.01);
     }
 
+    @Test
+    public void modifyingRadiusOfTheCircleChangesItsValue(){
+        circle = new Circle(5.00);
+
+        circle.setRadius(8.00);
+
+        assertEquals(8, circle.getRadius(),0.00);
+    }
+
 
 }
